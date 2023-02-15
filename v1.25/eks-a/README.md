@@ -180,14 +180,14 @@ chmod 755 sonobuoy
        sshAuthorizedKeys:
        - "ssh-rsa AAAA..."
    ```
-
+   
 1. Set credential environment variables
 
    ```shell
    export EKSA_VSPHERE_USERNAME='billy'
    export EKSA_VSPHERE_PASSWORD='t0p$ecret'
    ```
-
+   
 1. Create a cluster
 
    ```shell
@@ -197,7 +197,7 @@ chmod 755 sonobuoy
 
 ## Run Sonobuoy e2e
 ```
-./sonobuoy run --mode=certified-conformance
+./sonobuoy run --mode=certified-conformance --wait --kube-conformance-image k8s.gcr.io/conformance:v1.25.6
 results=$(./sonobuoy retrieve)
 mkdir ./results
 tar xzf $results -C ./results
